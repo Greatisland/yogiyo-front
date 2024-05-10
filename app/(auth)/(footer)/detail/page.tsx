@@ -84,9 +84,9 @@ const Detail = () => {
           }
           const result = await shopApi.getShopInfo(param);
           const nullToZeroResult = () => {
-            const newMinOrderPrice = result.minOrderPrice ? result.minOrderPrice : 0
-            const newMinDeliveryPrice = result.minDeliveryPrice ? result.minDeliveryPrice : 0
-            return {...result, minOrderPrice : newMinOrderPrice, minDeliveryPrice : newMinDeliveryPrice}
+            const newMinOrderPrice = result.minOrderPrice ?? 0
+            const newMinDeliveryPrice = result.minDeliveryPrice ?? 0
+            return {...result, minOrderPrice : newMinOrderPrice , minDeliveryPrice : newMinDeliveryPrice}
           }
           setShopInfo(nullToZeroResult)
         }

@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import TabMenu from '@/components/common/TabMenu';
 import ToggleMenu from '@/components/common/ToggleMenu';
 import { BsPencil } from 'react-icons/bs';
-import { useSearchParams } from 'next/navigation';
 
 import Writable from '@/components/review/writable';
 import Written from '@/components/review/written';
@@ -34,11 +33,6 @@ const UserReview = () => {
   const handleGetTab2 = (selectedTab: string) => {
     setTab2(selectedTab);
   };
-
-  const searchParams = useSearchParams();
-  const shopId = searchParams.get('shopId');
-
-  console.log(shopId)
 
   return (
     <div className="bg-grey1">
