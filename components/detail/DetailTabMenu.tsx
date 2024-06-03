@@ -194,7 +194,7 @@ const DetailTabMenu = ({shopInfo, handleThisMenu}: Props) => {
                 handleGrandchildClick(menuGroup?.name)
                 console.log(menuGroup?.name)
               }}
-              key={i}
+              key={menuGroup?.id}
             >
               {menuGroup?.name}
             </p>
@@ -223,7 +223,7 @@ const DetailTabMenu = ({shopInfo, handleThisMenu}: Props) => {
         <div className='flex flex-wrap gap-3 bg-grey9 p-[10px] pb-[20px]'>
         {menuGroups?.map((menuGroup, i) => (
           <span 
-            key={i}
+            key={menuGroup?.id}
             className={`p-[7px] rounded-3xl 
               ${activeMenu === menuGroup?.name ? 'bg-black text-white font-bold' : 'bg-white text-black'} 
             `}
@@ -247,7 +247,7 @@ const DetailTabMenu = ({shopInfo, handleThisMenu}: Props) => {
           if(i === 0){
             return (
               <div 
-                key={i}
+                key={menuGroup?.id}
                 ref={el => {if(el) sectionRefs.current[menuGroup?.name] = el;}} 
                 className='bg-grey9 h-[300px] p-4 relative'
               >
@@ -262,7 +262,7 @@ const DetailTabMenu = ({shopInfo, handleThisMenu}: Props) => {
           return (
             <>
               <div 
-                key={i}
+                key={menuGroup?.id}
                 ref={el => {if(el) sectionRefs.current[menuGroup?.name] = el;}} 
                 className='px-4 py-6 relative'
               >
@@ -272,7 +272,7 @@ const DetailTabMenu = ({shopInfo, handleThisMenu}: Props) => {
                 <p className='text-[1.3rem] font-bold pt-2 pb-6'>{menuGroup?.name}</p>
                 {menuGroup.menus?.map((menu, i) => (
                   <div 
-                    key={i}
+                    key={menu.id}
                     className='flex gap-4 py-[20px] border-b'
                     onClick={() => {
                       setIsModal(true);

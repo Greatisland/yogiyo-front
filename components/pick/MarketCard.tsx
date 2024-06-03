@@ -75,7 +75,7 @@ const MarketCard = ({ info, shopId, onRemove }: Props) => {
     onRemove && onRemove(shopId.toString());
   };
 
-
+  
   return (
     <div className="mt-[20px] ml-[20px] mr-[20px] pb-[20px] border-b border-slate-200 flex gap-4">
       <Link href={{
